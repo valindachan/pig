@@ -49,4 +49,20 @@ class CautiousPlayer < Player
   end
 end
 
-## TODO add your own Player subclasses here
+class GreedyPlayer < Player
+  def roll_again?
+    super && @turn_score < 50
+  end
+end
+
+class ModeratePlayer < Player
+  def roll_again?
+    super && @turn_score < 30
+  end
+end
+
+class VeryGreedyPlayer < Player
+  def roll_again?
+    super && @turn_score < 100
+  end
+end
